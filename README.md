@@ -41,6 +41,7 @@ The server must also have the **Group Policy Management Console (GPMC)** availab
 After installation, Group Policy Management can be accessed through:
 
 **Server Manager → Tools → Group Policy Management**
+<img width="1256" height="957" alt="Group Policy Management Window " src="https://github.com/user-attachments/assets/fe929a7f-8a96-4b1d-914c-90f7c4cfb94f" />
 
 ---
 
@@ -52,6 +53,7 @@ After installation, Group Policy Management can be accessed through:
 4. Expand the Active Directory forest.
 5. Expand the domain.
 6. Review the available Organizational Units and existing Group Policy Objects.
+<img width="1264" height="950" alt="Default Domain Controllers Policy 2" src="https://github.com/user-attachments/assets/b33aa5f8-fdaa-4634-96d6-267a3c9e206e" />
 
 The Group Policy Management Console provides a centralized location for creating, editing, linking, and managing GPOs.
 
@@ -149,19 +151,22 @@ The first GPO created was a password policy.
 `Password Policy`
 
 5. Right-click the new GPO.
-6. Select **Edit**.
+6. Select **Edit**.<img width="1335" height="953" alt="3 New GPO" src="https://github.com/user-attachments/assets/79b7c841-b174-4871-8096-b7f1a67bc27d" />
+
 
 ### Configure Password Requirements
 
 Navigate to:
 
 **Computer Configuration → Policies → Windows Settings → Security Settings → Account Policies → Password Policy**
+<img width="1189" height="780" alt="4 Changing Password Policies" src="https://github.com/user-attachments/assets/83511757-7ead-4b46-b873-bb6e6616589a" />
 
 Configure settings such as:
 
 - Minimum password length
 - Password complexity requirements
 - Maximum password age
+<img width="1332" height="947" alt="5 Updated Password GPO" src="https://github.com/user-attachments/assets/1c85557e-4abb-4903-9295-4fc54f82bf03" />
 
 Example configuration:
 
@@ -196,7 +201,8 @@ Navigate to:
 
 4. Right-click **Drive Maps**.
 5. Select **New → Mapped Drive**.
-6. Select the desired drive letter.
+6. Select the desired drive letter.<img width="1345" height="938" alt="6 Drive Mapping GPO created" src="https://github.com/user-attachments/assets/cde5066f-6207-4191-9000-5e036d8f798e" />
+
 
 Example:
 
@@ -226,6 +232,7 @@ The third GPO was created to control the desktop wallpaper for users.
 2. Name it:
 
 `Desktop Wallpaper`
+<img width="1351" height="958" alt="7 Desktop Wallpaper GPO Update " src="https://github.com/user-attachments/assets/57b6957f-e83d-419f-bd25-f27a4c308ca3" />
 
 3. Edit the GPO.
 
@@ -259,6 +266,7 @@ The fourth GPO was created to prevent users from accessing the Control Panel and
 2. Name it:
 
 `Restrict Control Panel`
+<img width="1340" height="952" alt="8 Restrict Control Panel GPO" src="https://github.com/user-attachments/assets/12e4e20f-d5f7-4bd5-b6a6-72b635d0c442" />
 
 3. Edit the GPO.
 
@@ -267,7 +275,8 @@ Navigate to:
 **User Configuration → Policies → Administrative Templates → Control Panel**
 
 4. Locate the setting that prevents access to Control Panel and PC settings.
-5. Enable the policy.
+5. Enable the policy.<img width="1092" height="645" alt="9 Restrict Control Panel GPO Updated" src="https://github.com/user-attachments/assets/312a1406-0233-4076-afac-33d00a14116a" />
+
 6. Apply the changes.
 
 This can be used to prevent standard users from changing system configuration settings.
@@ -286,6 +295,7 @@ Because this restriction applies to the computer, **Computer Configuration** is 
 2. Name it:
 
 `USB Devices`
+<img width="1339" height="943" alt="10 Disable USB Devices GPO" src="https://github.com/user-attachments/assets/93f7c8ba-f308-4884-ad4d-bb6811229bd0" />
 
 3. Edit the GPO.
 
@@ -294,38 +304,15 @@ Navigate to:
 **Computer Configuration → Policies → Administrative Templates → System → Removable Storage Access**
 
 4. Locate the appropriate removable-storage restrictions.
-5. Enable the required restriction.
+5. Enable the required restriction.<img width="1339" height="959" alt="11 Disable USB Devices GPO Updated" src="https://github.com/user-attachments/assets/27fe7588-ec43-45f6-8d90-f440a3456d31" />
+
 6. Apply the changes.
 
 This type of GPO can help prevent unauthorized use of USB storage devices.
 
 ---
 
-# 12. Account Lockout Policy — Bonus Activity
-
-An additional exercise is configuring an account lockout policy.
-
-Account lockout policies help protect against repeated password-guessing attempts.
-
-Important settings include:
-
-- Account lockout threshold
-- Account lockout duration
-- Reset account lockout counter after
-
-Example:
-
-```text
-Account lockout threshold: 5 failed attempts
-Account lockout duration: 15 minutes
-Reset counter after: 15 minutes
-```
-
-These values are examples for the lab and can be adjusted depending on the organization's security requirements.
-
----
-
-# 13. Apply and Test GPOs
+# 12. Apply and Test GPOs
 
 After creating the GPOs, they should be tested on a domain-connected client computer.
 
