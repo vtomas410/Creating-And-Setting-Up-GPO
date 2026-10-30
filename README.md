@@ -170,7 +170,7 @@ Configure settings such as:
 
 Example configuration:
 
-```text
+```
 Minimum password length: 12 characters
 Password complexity: Enabled
 Maximum password age: 90 days
