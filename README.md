@@ -171,7 +171,9 @@ Configure settings such as:
 Example configuration:
 
 `Minimum password length: 12 characters`
+
 `Password complexity: Enabled`
+
 `Maximum password age: 90 days`
 
 The purpose of this GPO is to enforce stronger password requirements across the domain.
