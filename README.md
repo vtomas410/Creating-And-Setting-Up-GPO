@@ -170,11 +170,9 @@ Configure settings such as:
 
 Example configuration:
 
-```
-Minimum password length: 12 characters
+`Minimum password length: 12 characters
 Password complexity: Enabled
-Maximum password age: 90 days
-```
+Maximum password age: 90 days`
 
 The purpose of this GPO is to enforce stronger password requirements across the domain.
 
@@ -212,9 +210,7 @@ Example:
 
 Example:
 
-```text
-\\ServerName\SharedFolder
-```
+`\\ServerName\SharedFolder`
 
 8. Apply the configuration.
 
@@ -248,9 +244,7 @@ Locate the desktop-related wallpaper settings.
 
 Example:
 
-```text
-Wallpaper Style: Fill
-```
+`Wallpaper Style: Fill`
 
 This allows the administrator to centrally control the desktop background for users assigned to the GPO.
 
@@ -318,29 +312,21 @@ After creating the GPOs, they should be tested on a domain-connected client comp
 
 On the client machine, open Command Prompt and run:
 
-```cmd
-gpupdate /force
-```
+`cmd gpupdate /force`
 
 This forces the computer to refresh its Group Policy settings.
 
 To view applied policies, use:
 
-```cmd
-gpresult /r
-```
+`cmd gpresult /r`
 
 For user-specific policies:
 
-```cmd
-gpresult /r /scope:user
-```
+`cmd gpresult /r /scope:user`
 
 For computer-specific policies:
 
-```cmd
-gpresult /r /scope:computer
-```
+`cmd gpresult /r /scope:computer`
 
 ---
 
@@ -380,15 +366,11 @@ If a GPO does not apply correctly, check the following:
 2. Verify that the user or computer is located in the correct OU.
 3. Run:
 
-```cmd
-gpupdate /force
-```
+`cmd gpupdate /force`
 
 4. Run:
 
-```cmd
-gpresult /r
-```
+`cmd gpresult /r`
 
 5. Check the GPO's **Scope** section in Group Policy Management.
 6. Verify Security Filtering.
